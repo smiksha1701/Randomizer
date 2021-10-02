@@ -61,10 +61,10 @@ double *RANDGEN5(long long m, double *data)
     long long a2 = 284, c2 = 137, X2 = 3, Xi2, Xi3;
     for (int i = 0; i < 100; i++)
     {
-        Xi2 = (X2 * a2 + c2) % m2;
-        X2 = Xi2;
         Xi1 = (X1 * a1 + c1) % m1;
         X1 = Xi1;
+        Xi2 = (X2 * a2 + c2) % m2;
+        X2 = Xi2;
         Xi3 = (abs(Xi1 - Xi2) % m);
         data[i] = double(Xi3) / (m - 1);
     }
